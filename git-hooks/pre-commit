@@ -1,0 +1,8 @@
+#!/bin/sh
+
+if [[ $(git diff-files --quiet; echo $?) -ne 0 ]]; then
+  echo "pre-commit hook: There are unstaged local changes to tracked files. Aborting commit."
+  exit 1
+fi
+exit 0
+
